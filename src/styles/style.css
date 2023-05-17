@@ -1,0 +1,287 @@
+/* .main-container {
+  height: 100vh;
+  width: 100%;
+  /* background-color: red; */
+body {
+  background-color: #f4f4f4;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #f4f4f4; */
+}
+:root {
+  --main-color: red;
+}
+
+
+
+/* .categories {
+  background-color: white;
+} */
+
+.wrapper {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.unordered {
+  list-style-type: square;
+}
+.sub-unordered {
+  list-style-type: disc;
+}
+.left {
+  height: 100vh;
+  background-color: var(--main-color);
+  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_card {
+  width: 20rem;
+  text-align: center;
+}
+.right {
+  height: 100vh;
+  flex-basis: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  background-color: white;
+}
+.main-header {
+  display: flex;
+}
+
+.text-decoration {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  color: white;
+}
+.searchbar {
+  margin: 0;
+  width: 350px;
+  align-items: center;
+}
+.login_btn {
+  background-color: var(--main-color);
+  color: white;
+  border: 1px solid red;
+  padding: 0.5rem 0;
+}
+
+.signup_input .inp {
+  margin: 0.25rem;
+}
+
+/* .container {
+  width: 30rem;
+  position: relative;
+} */
+
+.categories {
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.list .item_link {
+  padding: 0.5rem 0;
+  list-style-type: none;
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.home .home_1 {
+  flex-basis: 30%;
+  background-color: #fff;
+  /* padding: 1rem; */
+}
+.home .home_2 {
+  flex-basis: 40%;
+}
+.home .home_3 {
+  flex-basis: 30%;
+}
+
+.profile_grid {
+  display: grid;
+  grid-template-rows: repeat(2, 16rem);
+  gap: 1rem 0;
+  /* margin: 0 3rem; */
+}
+
+.circle {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: khaki;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.h3 {
+  color: red;
+  font-weight: bold;
+  align-self: center;
+}
+
+.rectangle {
+  /* display: flex; */
+  width: 100%;
+  height: 20rem;
+  background: khaki;
+}
+
+.paymentmethods {
+  color: white;
+}
+
+.base-footer {
+  background-color: #333;
+  text-align: center;
+  color: #f4f4f4;
+}
+.minicircle {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  opacity: 60%;
+  border-radius: 50%;
+  align-self: left;
+}
+
+.minicircles {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  background-color: grey;
+  opacity: 60%;
+  border-radius: 50%;
+  align-self: left;
+}
+
+.help-and-info {
+  color: white;
+  font-size: small;
+  text-decoration: none;
+}
+
+.h6 {
+  color: red;
+}
+
+.item {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  opacity: 60%;
+}
+
+.square {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: burlywood;
+}
+/* .profile_grid .profile_card{
+  width: 5rem;
+  height: 6rem;
+  background-color: red;
+} */
+
+.top_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.top_grid1 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.rating_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+  /* line-height: 0.; */
+}
+
+.topdeals {
+  color: #fff;
+  text-align: center;
+}
+
+.top_cat {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.item_card_container {
+  width: 12rem;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.paymentmode {
+  color: red;
+  font-size: x-small;
+}
+
+.price {
+  margin-bottom: 0px;
+}
+
+.space {
+  margin-top: 0;
+}
+
+.store_grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem 0;
+}
+
+.purchase-card {
+  width: 27rem;
+  height: 40rem;
+  background-color: coral;
+}
+
+.specification-rect {
+  background-color: coral;
+}

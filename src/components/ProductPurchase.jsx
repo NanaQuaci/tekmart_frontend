@@ -4,9 +4,10 @@ import { Container } from 'reactstrap';
 import RatingItem from './RatingItem';
 import RatingItem1 from './RatingItem1';
 import Specification from './Specification';
+import { Link } from 'react-router-dom';
 const ProductPurchase = () => {
   return (
-    <div className="wrapper container-fluid bg-white">
+    <div className="wrapper bg-white">
       <div className="row">
         <div className="col-4">
           <div className="purchase-card"></div>
@@ -19,7 +20,7 @@ const ProductPurchase = () => {
             <Item2 />
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-8">
           <div>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam
             molestias quisquam repellat.
@@ -53,7 +54,7 @@ const ProductPurchase = () => {
               <div style={{ color: 'red' }}>1 unit available</div>
             </div>
           </div>
-          <div >
+          <div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe est
               laudantium ipsa necessitatibus quo mollitia aut dicta aliquid
@@ -64,21 +65,30 @@ const ProductPurchase = () => {
           </div>
           <div className="d-flex ">
             <div>
-              <button className=" text-decoration  d-flex justify-content-center border-0 p-2 px-4 rounded-pill " style={{color:"white", backgroundColor:"red" }}>
+              <button
+                className=" text-decoration  d-flex justify-content-center border-0 p-2 px-4 rounded-pill "
+                style={{ color: 'white', backgroundColor: 'red' }}
+              >
                 {' '}
                 Buy Now{' '}
               </button>
             </div>
             <div>
-              <button className=" text-decoration  d-flex justify-content-center border-0 p-2 px-4 rounded-pill" style={{color:"red", }}>
+              <button
+                className=" text-decoration  d-flex justify-content-center border-0 p-2 px-4 rounded-pill"
+                style={{ color: 'red' }}
+              >
                 {' '}
                 Add to Cart{' '}
               </button>
             </div>
           </div>
+          <div className="text-decoration p-3" style={{ color: 'red' }}>
+            <Link to="/Store">View Shop</Link>
+          </div>
         </div>
       </div>
-      <hr/>
+      <hr />
       <div>
         <Specification />
       </div>

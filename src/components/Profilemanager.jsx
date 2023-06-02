@@ -20,7 +20,7 @@ const Profilemanager = () => {
           </div>
         </div>
       </div>
-      <div className="card border-0"></div>
+     <div className="card border-0"></div> 
     </div>
   );
 };

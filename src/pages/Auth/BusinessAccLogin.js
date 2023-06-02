@@ -1,27 +1,18 @@
-import React from 'react';
+import React from 'react'
 import Input from '../../components/Input';
-import { Form, Link, useSubmit } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import logo from '../../assets/png/Aser.png';
 import { useNavigate } from 'react-router-dom';
-
-
-const Login = () => {
-  
-  const navigate = useNavigate() 
-  const handleSubmit = () =>{
-    navigate("/")
-    
-  }
+const BusinessAccLogin = () => {
+    const navigate= useNavigate()
   return (
     <div className="main-container">
       <div className="d-flex">
         <div className="left">
           <img src={logo} alt="" className="img-fluid" width="200" />
         </div>
-        <div className="right ">
-        <form onSubmit={handleSubmit}>
-
+        <div className="right">
           <div className="card border-0 login_card">
             <h5>LOG INTO YOUR ACCOUNT</h5>
             <h6>Welcome back</h6>
@@ -37,23 +28,24 @@ const Login = () => {
                 Forgot Password
               </a>
             </div>
-            <Button btnName="Sign in" type="submit" />
+            <Button btnName="Sign in" onClick={()=>navigate("/")}>
+            
+            </Button>
             <p className="my-3">
-              Don't have an account?{' '}
+              Haven't got a business account?{' '}
               <Link
-                to="/signup"
+                to="/businessaccountsignup"
                 className="text-decoration-none my-2"
                 style={{ color: 'red' }}
               >
-                Sign up Now
+                Become a seller Now
               </Link>
             </p>
           </div>
-        </form>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default BusinessAccLogin

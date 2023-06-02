@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Pricedproduct = () => {
   return (
     <Link
-      className="navbar-item"
+      className="navbar-item text-decoration-none"
       activeClasssName ="is-active"
       to="/product-page">
 
@@ -12,17 +12,17 @@ const Pricedproduct = () => {
       <div>
         <Item1 />
       </div>
-      <div>
+      <div className="text-decoration-none text-black">
+        <span className="space">Gas Smoker For Big Mansions.</span><br/>
+        <span>Brand - Sahil</span>
         <p className="price">GHC 200.00</p>
-        <p className="space">Gas Smoker For Big Mansions...</p>
+        
+        
 
         <div className="paymentmode d-flex justify-content-between mx-2">
-          <p>Paid Delivery</p>
-          <p>Pick Up</p>
+          <span>Paid Delivery</span>
         </div>
       </div>
-      <p></p>
-      <p></p>
     </div>
     </Link>
   );

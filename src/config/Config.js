@@ -5,6 +5,8 @@ import Login from '../pages/Auth/Login';
 import SignUp from '../pages/Auth/SignUp';
 import SellerPage from '../pages/SellerPage';
 import ProductPage from '../pages/ProductPage';
+import BusinessAccSignup from '../pages/Auth/BusinessAccSignup';
+import BusinessAccLogin from '../pages/Auth/BusinessAccLogin';
 
 const Config = () => {
   return (
@@ -15,7 +17,10 @@ const Config = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/store" element={<SellerPage />} />
         <Route path="/product-page" element={<ProductPage />} />
+        <Route path="/businessaccountsignup" element={<BusinessAccSignup />} />
+        <Route path="/businessaccountlogin" element={<BusinessAccLogin />} />
       </Routes>
+
     </BrowserRouter>
   );
 };

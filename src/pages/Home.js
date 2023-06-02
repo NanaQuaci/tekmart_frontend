@@ -19,19 +19,25 @@ import StoreDescription from '../components/StoreDescription';
 import PricedProducts1 from '../components/PricedProducts1';
 import ProductPurchase from '../components/ProductPurchase';
 import AddPaymentMode from '../components/AddPaymentMode';
+import AddMomo from '../components/AddMomo';
+import AddAddress from '../components/AddAddress';
+import ShoppingCart from '../components/ShoppingCart';
+import CategoryLists from '../components/CategoryLists';
+import StarRatingItem from '../components/StarRatingItem';
 
 const Home = () => {
   return (
     <div>
       <Header />
       <Navbar />
+      <CategoryLists />
       <main className="container-fluid ">
         <div className=" wrapper">
           <div className="row pt-3">
-            <div className="col-3">
+            {/*<div className="col-3">
               <Categoriess className="" />
-            </div>
-            <div className="col-6">
+            </div> */}
+            <div className="col-12">
               <div className="d-flex flex-column">
                 <div>
                   <CarouselBody />
@@ -39,9 +45,9 @@ const Home = () => {
                 <Topsellers />
               </div>
             </div>
-            <div className="col-3">
+            {/*<div className="col-3">
               <Profilemanager />
-            </div>
+            </div> */}
             <div>
               <Topcategories />
             </div>
@@ -83,6 +89,18 @@ const Home = () => {
             <Pricedproduct />
             <Pricedproduct />
           </div>
+          <div>
+            <AddMomo />
+          </div>
+          <div>
+            <AddAddress />
+          </div>
+          <div>
+            <StarRatingItem />
+          </div>
+          <div>
+            <ShoppingCart />
+          </div>
         </div>
       </main>
 
@@ -98,31 +116,7 @@ const Home = () => {
         <Footer3 />
       </div>
 
-      <div>
-        <Stores />
-      </div>
-      <div>
-        <div>
-          <StoreDescription />
-        </div>
-        <div>
-          <div className="wrapper d-flex">
-            <PricedProducts1 />
-            <PricedProducts1 />
-            <PricedProducts1 />
-            <PricedProducts1 />
-            <PricedProducts1 />
-            <PricedProducts1 />
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <ProductPurchase />
-      </div>
-      <div>
-        <AddPaymentMode />
-      </div>
+      
     </div>
   );
 };

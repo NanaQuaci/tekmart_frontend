@@ -55,8 +55,9 @@ const Specification = () => {
             </div>
         </div>
         </Container>
-        <p></p>
+        
         <div>
+        <br/>
         <MoreItems />
         </div>
         <div className="d-flex">

@@ -98,9 +98,6 @@ const Home = () => {
           <div>
             <StarRatingItem />
           </div>
-          <div>
-            <ShoppingCart />
-          </div>
         </div>
       </main>
 

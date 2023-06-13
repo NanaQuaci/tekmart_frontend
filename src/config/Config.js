@@ -7,6 +7,7 @@ import SellerPage from '../pages/SellerPage';
 import ProductPage from '../pages/ProductPage';
 import BusinessAccSignup from '../pages/Auth/BusinessAccSignup';
 import BusinessAccLogin from '../pages/Auth/BusinessAccLogin';
+import Cart from '../pages/Cart';
 
 const Config = () => {
   return (
@@ -19,6 +20,7 @@ const Config = () => {
         <Route path="/product-page" element={<ProductPage />} />
         <Route path="/businessaccountsignup" element={<BusinessAccSignup />} />
         <Route path="/businessaccountlogin" element={<BusinessAccLogin />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
 
     </BrowserRouter>

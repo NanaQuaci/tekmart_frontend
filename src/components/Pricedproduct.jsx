@@ -21,6 +21,7 @@ const Pricedproduct = () => {
 
         <div className="paymentmode d-flex justify-content-between mx-2">
           <span>Paid Delivery</span>
+          <span className="addtocart">Add to Cart</span>
         </div>
       </div>
     </div>

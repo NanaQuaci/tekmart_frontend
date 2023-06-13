@@ -22,8 +22,6 @@ html {
   --main-color: red;
 }
 
-
-
 /* .categories {
   background-color: white;
 } */
@@ -49,7 +47,7 @@ html {
   align-items: center;
 }
 
-.cart{
+.cart {
   background-color: white;
   /*padding: 1rem;*/
 }
@@ -68,8 +66,12 @@ html {
   flex-direction: column;
 }
 
-.cart-dimension{
+.cart-dimension {
   height: 50rem;
+}
+
+.addtocart {
+  color: red;
 }
 
 .header {
@@ -159,6 +161,10 @@ ul {
   color: red;
   font-weight: bold;
   align-self: center;
+}
+
+.navbar_color {
+  background-color: red;
 }
 
 .rectangle {
@@ -267,11 +273,10 @@ ul {
   grid-template-columns: repeat(6, 1fr);
 }
 
-.momo_card{
+.momo_card {
   width: 30rem;
   height: 25rem;
   align-items: center;
-
 }
 
 .paymentmode {

@@ -38,7 +38,7 @@ const ShoppingCart = () => {
                       padding: '0 10px',
                     }}
                   >
-                    types
+                    type
                   </div>
                   <div>GHC 200.00</div>
                 </div>

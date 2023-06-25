@@ -18,6 +18,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
+
     const username = document.getElementById('username')?.value;
     const password = document.getElementById('password')?.value;
     //const history = useHistory();
@@ -48,6 +49,9 @@ const Login = () => {
           <img src={logo} alt="" className="img-fluid" width="200" />
         </div>
         <div className="right ">
+
+        <Formik>
+
           <form onSubmit={handleSubmit}>
             <div className="card border-0 login_card">
               <h5>LOG INTO YOUR ACCOUNT</h5>
@@ -78,6 +82,8 @@ const Login = () => {
               </p>
             </div>
           </form>
+        </Formik>
+
         </div>
       </div>
     </div>

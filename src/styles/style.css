@@ -316,3 +316,15 @@ ul {
 .specification-rect {
   background-color: coral;
 }
+
+.password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}

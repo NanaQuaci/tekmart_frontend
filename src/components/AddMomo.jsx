@@ -3,6 +3,11 @@ import React from 'react';
 //import { Input, Label } from 'reactstrap';
 import Input from './Input';
 
+import momo1 from '../assets/png/mtn-momo.jpg';
+import momo2 from '../assets/png/vodacash.jpg';
+import momo3 from '../assets/png/airtel-tigo.png';
+
+
 const AddMomo = () => {
   return (
     <div className='wrapper row'>
@@ -29,11 +34,11 @@ const AddMomo = () => {
         <br/>
         <div className="flex">
         <Input type='radio'/>
-        <img src="src/assets/png/mtn-momo.jpg" alt=" " className='px-3'/>
+        <img src="momo1" alt=""  className='px-3'/>
         <Input type='radio'/>
-        <img src="src/assets/png/airtel-tigo.png" alt=" " className='px-3'/>
+        <img src="momo3" alt=" " className='px-3'/>
         <Input type='radio'/>
-        <img src="src/assets/png/vodacash.png" alt=" " className='px-3' />
+        <img src="momo2" alt=" " className='px-3' />
         </div>
         <p></p>
         

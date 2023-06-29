@@ -18,10 +18,35 @@ const Login = () => {
     password: Yup.string().required('Password is required'),
   });
 
-  const handleSubmit = (values) => {
-    // Perform your login logic here using values.email and values.password
-    console.log('Login success');
-    navigate('/');
+  const handleSubmit = async (values, {setSubmitting}) => {
+
+    try{
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        // Authentication successful
+        // Perform your login logic here using values.email and values.password
+        console.log('Login success');
+        navigate('/');
+    } else {
+      // Authentication failed
+      const error = await response.text();
+      console.log('Login failed:', error);
+      alert('Invalid email or password');
+    }
+  } catch (error) {
+    console.error('Login error:', error);
+    alert('An error occurred during login');
+  } finally {
+    setSubmitting(false);
+  }
+    
   };
 
   return (
@@ -32,6 +57,7 @@ const Login = () => {
         </div>
         <div className="right">
           <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+          {({ isSubmitting }) => (
             <Form>
               <div className="card border-0 login_card">
                 <h5>LOG INTO YOUR ACCOUNT</h5>
@@ -50,7 +76,7 @@ const Login = () => {
                     Forgot Password
                   </a>
                 </div>
-                <Button btnName="Sign in" type="submit" />
+                <Button btnName="Sign in" type="submit"  disabled={isSubmitting} />
                 <p className="my-3">
                   Don't have an account?{' '}
                   <Link to="/signup" className="text-decoration-none my-2" style={{ color: 'red' }}>
@@ -59,6 +85,7 @@ const Login = () => {
                 </p>
               </div>
             </Form>
+          )}
           </Formik>
         </div>
       </div>

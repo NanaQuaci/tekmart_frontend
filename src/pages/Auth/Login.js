@@ -4,6 +4,8 @@ import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import logo from '../../assets/png/Aser.png';
+import axios from '../../api/axios';
+import server from '../../server';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,14 +23,15 @@ const Login = () => {
   const handleSubmit = async (values, {setSubmitting}) => {
 
     try{
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
+      const response = await axios.post(`${server}user/login`, {
+        // method: 'POST',
+        // headers: {
+        //   'Content-Type': 'application/json',
+        // },
+        // body: JSON.stringify(values),
+        ...values,
       });
-
+      console.log(response.data);
       if (response.ok) {
         // Authentication successful
         // Perform your login logic here using values.email and values.password

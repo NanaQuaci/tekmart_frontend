@@ -32,14 +32,14 @@ const Login = () => {
         ...values,
       });
       console.log(response.data);
-      if (response.ok) {
+      if (response.data) {
         // Authentication successful
         // Perform your login logic here using values.email and values.password
         console.log('Login success');
-        navigate('/');
+        // navigate('/');
     } else {
       // Authentication failed
-      const error = await response.text();
+      const error = await response.data();
       console.log('Login failed:', error);
       alert('Invalid email or password');
     }

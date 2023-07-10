@@ -92,6 +92,9 @@ const Home = () => {
           <div>
             <AddMomo />
           </div>
+          {/* <div>
+            <Profilemanager />
+          </div> */}
           <div>
             <AddAddress />
           </div>

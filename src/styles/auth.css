@@ -40,6 +40,14 @@
     font-size: 1.3rem;
   }
 
+  .cardWidth {
+    width: 400px;
+  }
+
+  .cardReset {
+    width: 400px;
+  }
+
   @media screen and (max-width: 768px){
     .right {
       flex-basis: 100%;
@@ -52,5 +60,10 @@
 
     .red-logo img {
       display: block;
+    }
+
+    .cardWidth {
+      width: 80%;
+      margin: auto;
     }
   }

@@ -1,0 +1,41 @@
+.title {
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1rem;
+}
+
+.title:hover {
+  color: #757575;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #464646;
+}
+
+.brand {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btnSecondary {
+  background-color: #fff;
+  color:  var(--main-color);
+  border: 2px solid var(--main-color);
+}
+
+.btnPrimary {
+  background-color: var(--main-color);
+  color: #fff;
+  border: 2px solid var(--main-color);
+}
+
+.btnSecondary:hover {
+  background-color: #ffd7d7;
+}
+
+.btnPrimary:hover {
+  background-color: #d4182b;
+  border: 2px solid #d4182b;
+}

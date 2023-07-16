@@ -1,7 +1,5 @@
+@import url("../index.css");
+
 .search-input:focus {
   outline: none;
-}
-
-.fill {
-  fill: #fff !important;
 }

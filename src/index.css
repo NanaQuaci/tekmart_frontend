@@ -1,7 +1,7 @@
-/* Importing styles */
-@import url("../src/styles/header.css");
-@import url("../src/styles/footer.css");
-@import url("../src/styles/auth.css");
+/* @import url("./styles/product.css");
+@import url("./styles/auth.css");
+@import url("./styles/header.css");
+@import url("./styles/footer.css"); */
 
 * {
   margin: 0;
@@ -27,6 +27,7 @@ body {
 #root {
   font-family: "Kumbh Sans", sans-serif;
   overflow-x: hidden;
+  background-color: #f8fafc;
 }
 
 /* background colors */
@@ -45,6 +46,10 @@ body {
   background-color: #020617;
 }
 
+.bgGrey {
+  background-color: #888888;
+}
+
 /* text colors */
 .textRed {
   color: var(--main-color);
@@ -58,3 +63,25 @@ body {
 .jumbo {
   min-height: 70vh;
 }
+
+.jumboSecBtn {
+  background-color: #fff;
+  color: #c10013;
+  border: 2px solid #fff
+}
+
+.jumboPriBtn {
+  background-color: #c10013;
+  color: #fff;
+  border: 2px solid #fff
+}
+
+.jumboSecBtn:hover {
+  background-color: #e0e0e0;
+  border: 2px solid #e0e0e0
+}
+
+.jumboPriBtn:hover {
+  background-color: #ee2136;
+}
+

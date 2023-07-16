@@ -1,17 +1,17 @@
 import React from 'react'
-// import ProductPurchase from '../components/Product/ProductPurchase'
 import Footer from '../components/footer/Footer'
 import Header from '../components/header/Header'
+import ProductDetails from '../components/product/ProductDetails'
+import ProductSpecs from '../components/product/ProductSpecs'
 
 const ProductPage = () => {
   return (
-    <div>
+    <>
       <Header />
-      <div>
-        {/* <ProductPurchase /> */}
-      </div>
+      <ProductDetails />
+      <ProductSpecs />
       <Footer />
-    </div>
+    </>
   )
 }
 

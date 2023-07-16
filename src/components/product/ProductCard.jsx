@@ -1,26 +1,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import prod from '../../assets/imgs/prod.jpg'
+import '../../styles/product.css'
 
 const ProductCard = () => {
     return (
         <>
-            <div className="col-2 border border-danger p-3">
-                <Link className="text-decoration-none" to="/product-page">
-                    <div>
-                        <img src={prod} className='w-100' alt='' />
-                    </div>
-                    <div className="text-black">
-                        <span className="space">Gas Smoker For Big Mansions.</span><br />
-                        <span>Brand - Sahil</span>
-                        <p className="price">GHC 200.00</p>
-
-                        <div className="paymentmode d-flex justify-content-between mx-2">
-                            <span>Paid Delivery</span>
-                            <span className="addtocart">Add to Cart</span>
+            <div className="col-6 col-md-2 shadow p-3">
+                <Link to={'/product-page'} className="text-decoration-none text-black">
+                        <div>
+                            <img src={prod} className='w-100' alt='' />
+                        </div>
+                    <div className="pt-2">
+                        <div className="price">
+                            GHC 200.00
+                        </div>
+                        <div className="title pt-1">
+                            Gas Smoker For Big Mansions...
+                        </div>
+                        <div className='brand text-muted pt-1'>
+                            Brand - Sahil
                         </div>
                     </div>
                 </Link>
+
+                <div className='my-2'>
+                    <button className='w-100 py-1 btnPrimary'>Add to cart</button>
+                </div>
             </div>
         </>
     );

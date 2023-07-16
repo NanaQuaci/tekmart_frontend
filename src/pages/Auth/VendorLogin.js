@@ -62,7 +62,7 @@ const BusinessAccLogin = () => {
           <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
             {({ isSubmitting }) => (
               <Form>
-                
+
                 <div className='d-flex justify-content-center mb-3 mb-md-0 red-logo'>
                   <img src={redLogo} alt="" className="img-fluid" width="200" />
                 </div>

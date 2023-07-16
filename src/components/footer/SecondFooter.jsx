@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../styles/footer.css'
 
 const SecondFooter = () => {
   return (
@@ -68,11 +69,11 @@ const SecondFooter = () => {
                 Subscribe to our newsletter for the latest update
               </div>
               <div className='d-flex flex-row mt-2'>
-                <div className=''>
+                <div className='me-1'>
                   <input type='text' placeholder='Email address' className='p-2' />
                 </div>
                 <div>
-                  <button className='p-2'>Subscribe</button>
+                  <button className='py-2 px-3 subscribe'>Subscribe</button>
                 </div>
               </div>
             </div>

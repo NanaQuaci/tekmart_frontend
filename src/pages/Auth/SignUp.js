@@ -87,7 +87,7 @@ const SignUp = ({ btnName, ...rest }) => {
                   <img src={redLogo} alt="" className="img-fluid" width="200" />
                 </div>
 
-                <div className="bg-white p-4 p-md-5 shadow">
+                <div className="bg-white p-4 p-md-5 shadow cardWidth">
                   <div className='d-flex flex-column text-center'>
                     <div className='text-bold'>CREATE AN ACCOUNT</div>
                     <div className='text-muted'>Join now to enjoy exclusiveness</div>

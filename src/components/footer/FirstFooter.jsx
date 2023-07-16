@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/png/Aser.png';
+import logo from '../../assets/imgs/logo-white.svg';
 
 const FirstFooter = () => {
     return (
@@ -11,8 +11,8 @@ const FirstFooter = () => {
                         <div className="logo my-4 my-md-0">
                             <img src={logo} alt="" className="img-fluid" width="140" />
                         </div>
-                        <div className="paymentmethods my-4 my-md-0">
-                            <p>PAYMENT METHODS</p>
+                        <div className="my-4 my-md-0">
+                            <p className='text-white'>PAYMENT METHODS</p>
                             <div className="d-flex justify-content-around align-items-center my-3">
                                 <div className="d-flex flex-column me-2">
                                     <div className="minicircles"></div>

@@ -3,8 +3,9 @@ import Item2 from '../Item2';
 import { Container } from 'reactstrap';
 import RatingItem from '../RatingItem';
 import RatingItem1 from '../RatingItem1';
-import Specification from './Specification';
+import Specification from './ProductSpecs';
 import { Link } from 'react-router-dom';
+
 const ProductPurchase = () => {
   return (
     <div className="wrapper bg-white">

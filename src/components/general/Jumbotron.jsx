@@ -12,10 +12,10 @@ const Jumbotron = () => {
                     <p>
                         Trendy Products, Factory Prices, Excellent Service
                     </p>
-                    <button type="button" className="me-3 btn btn-outline-light">
+                    <button className="me-3 py-2 px-3 jumboPriBtn">
                         Learn more
                     </button>
-                    <button type="button" className="btn btn-light shadow-0 text-primary pt-2 border border-white">
+                    <button className="py-2 px-3 jumboSecBtn">
                         Purchase now
                     </button>
                 </div>

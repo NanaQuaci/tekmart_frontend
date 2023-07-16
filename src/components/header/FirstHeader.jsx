@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const FirstHeader = () => {
   return (
-    <div className="header py-1" >
+    <div className="header py-1 bg-white" >
       <div className="container-sm d-flex justify-content-between">
         <div></div>
         <div className="d-flex">

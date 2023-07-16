@@ -74,7 +74,7 @@ const SignUp = ({ btnName, ...rest }) => {
           <img src={whiteLogo} alt="" className="img-fluid" width="200" />
         </div>
 
-        <div className="right my-5 my-md-0">
+        <div className="right">
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}

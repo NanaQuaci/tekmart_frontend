@@ -58,7 +58,7 @@ const BusinessAccLogin = () => {
     <div className="main-container">
       <div className="d-flex">
         {/*  */}
-        <div className="right my-5 my-md-0">
+        <div className="right">
           <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
             {({ isSubmitting }) => (
               <Form>

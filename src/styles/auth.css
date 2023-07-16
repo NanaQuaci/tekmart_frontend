@@ -1,0 +1,38 @@
+.main-container{
+  background-color: #e5e7eb;
+}
+
+.right {
+  height: 100vh;
+  flex-basis: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left {
+  height: 100vh;
+  background-color: var(--main-color);
+  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-btn {
+    background-color: var(--main-color);
+    color: white;
+    border: 1px solid red;
+  }
+
+  @media screen and (max-width: 768px){
+    .right {
+      flex-basis: 100%;
+      display: flex;
+    }
+    
+    .left {
+      display: none;
+    }
+  }

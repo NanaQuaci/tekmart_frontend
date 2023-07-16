@@ -1,0 +1,7 @@
+.search-input:focus {
+  outline: none;
+}
+
+.fill {
+  fill: #fff !important;
+}

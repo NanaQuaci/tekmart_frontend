@@ -6,6 +6,7 @@ import axios from '../../api/axios';
 import server from '../../server';
 import redLogo from '../../assets/imgs/logo-red.svg';
 import whiteLogo from '../../assets/imgs/logo-white.svg';
+import '../../styles/auth.css';
 
 const SignUp = ({ btnName, ...rest }) => {
   const isSubmitting = useFormikContext();

@@ -6,7 +6,7 @@ import redLogo from '../../assets/imgs/logo-red.svg';
 import whiteLogo from '../../assets/imgs/logo-white.svg';
 import axios from '../../api/axios';
 import server from '../../server';
-
+import '../../styles/auth.css';
 
 const BusinessAccLogin = () => {
   const navigate = useNavigate();

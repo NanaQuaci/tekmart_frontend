@@ -6,7 +6,7 @@ import whiteLogo from '../../assets/imgs/logo-white.svg';
 import * as Yup from 'yup';
 import axios from '../../api/axios';
 import server from '../../server';
-
+import '../../styles/auth.css';
 
 const BusinessAccSignup = () => {
 

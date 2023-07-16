@@ -15,13 +15,13 @@ const SecondFooter = () => {
               </div>
               <div className='flex flex-column text-info'>
                 <div>
-                  <Link to={'/'} style={{ color: "grey" }} >Home</Link>
+                  <Link to={'/'} className="text-decoration-none" style={{ color: "grey" }} >Home</Link>
                 </div>
                 <div>
-                  <Link to={'/'} style={{ color: "grey" }}>Who We Are</Link>
+                  <Link to={'/'} className="text-decoration-none" style={{ color: "grey" }}>Who We Are</Link>
                 </div>
                 <div>
-                  <Link to={'/'} style={{ color: "grey" }}>Sevices</Link>
+                  <Link to={'/'} className="text-decoration-none" style={{ color: "grey" }}>Sevices</Link>
                 </div>
               </div>
             </div>
@@ -32,14 +32,14 @@ const SecondFooter = () => {
                 Quick Link
               </div>
               <div className='flex flex-column text-info'>
-                <div>
-                  <Link to={'/'} style={{ color: "grey" }} >Home</Link>
+              <div>
+                  <Link to={'/'} className="text-decoration-none" style={{ color: "grey" }} >Home</Link>
                 </div>
                 <div>
-                  <Link to={'/'} style={{ color: "grey" }}>Who We Are</Link>
+                  <Link to={'/'} className="text-decoration-none" style={{ color: "grey" }}>Who We Are</Link>
                 </div>
                 <div>
-                  <Link to={'/'} style={{ color: "grey" }}>Sevices</Link>
+                  <Link to={'/'} className="text-decoration-none" style={{ color: "grey" }}>Sevices</Link>
                 </div>
               </div>
             </div>
@@ -50,14 +50,14 @@ const SecondFooter = () => {
                 Quick Link
               </div>
               <div className='flex flex-column text-info'>
-                <div>
-                  <Link to={'/'} style={{ color: "grey" }} >Home</Link>
+              <div>
+                  <Link to={'/'} className="text-decoration-none" style={{ color: "grey" }} >Home</Link>
                 </div>
                 <div>
-                  <Link to={'/'} style={{ color: "grey" }}>Who We Are</Link>
+                  <Link to={'/'} className="text-decoration-none" style={{ color: "grey" }}>Who We Are</Link>
                 </div>
                 <div>
-                  <Link to={'/'} style={{ color: "grey" }}>Sevices</Link>
+                  <Link to={'/'} className="text-decoration-none" style={{ color: "grey" }}>Sevices</Link>
                 </div>
               </div>
             </div>

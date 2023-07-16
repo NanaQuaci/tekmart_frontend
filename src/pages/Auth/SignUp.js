@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage, useFormikContext } from 'formik';
-import logo from '../../assets/png/Aser.png';
 import * as Yup from 'yup';
 import axios from '../../api/axios';
 import server from '../../server';
+import redLogo from '../../assets/imgs/logo-red.svg';
+import whiteLogo from '../../assets/imgs/logo-white.svg';
 
 const SignUp = ({ btnName, ...rest }) => {
   const isSubmitting = useFormikContext();
@@ -68,7 +69,12 @@ const SignUp = ({ btnName, ...rest }) => {
   return (
     <div className="main-container">
       <div className="d-flex">
-        <div className="right">
+        {/* Logo */}
+        <div className="left">
+          <img src={whiteLogo} alt="" className="img-fluid" width="200" />
+        </div>
+
+        <div className="right my-5 my-md-0">
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -76,27 +82,29 @@ const SignUp = ({ btnName, ...rest }) => {
           >
             {({ isSubmitting }) => (
               <Form>
-                <div className="bg-white p-4 p-md-5">
-                  <div className='bg-danger d-flex justify-content-center mb-3'>
-                    <div>
-                      <img src={logo} alt="" className="img-fluid" width="200" />
+
+                <div className='d-flex justify-content-center mb-3 mb-md-0 red-logo'>
+                  <img src={redLogo} alt="" className="img-fluid" width="200" />
+                </div>
+
+                <div className="bg-white p-4 p-md-5 shadow">
+                  <div className='d-flex flex-column text-center'>
+                    <div className='text-bold'>CREATE AN ACCOUNT</div>
+                    <div className='text-muted'>Join now to enjoy exclusiveness</div>
+                  </div>
+
+
+                  <div className="d-flex gap-2">
+                    <div className="form-group mt-4">
+                      <Field type="text" name="firstname" placeholder="First name" className="px-3 py-2 w-100" />
+                      <ErrorMessage name="firstname" component="div" className="text-danger" />
+                    </div>
+
+                    <div className="form-group mt-4">
+                      <Field type="text" name="lastname" placeholder="Last name" className="px-3 py-2 w-100" />
+                      <ErrorMessage name="lastname" component="div" className="text-danger" />
                     </div>
                   </div>
-                  <h5>CREATE AN ACCOUNT</h5>
-                  <h6>Join now to enjoy exclusiveness</h6>
-                  {/* <div className="d-flex gap-2"> */}
-
-                  <div className="form-group mt-4">
-                    <Field type="text" name="firstname" placeholder="First name" className="px-3 py-2 w-100" />
-                    <ErrorMessage name="firstname" component="div" className="text-danger" />
-                  </div>
-
-                  <div className="form-group mt-4">
-                    <Field type="text" name="lastname" placeholder="Last name" className="px-3 py-2 w-100" />
-                    <ErrorMessage name="lastname" component="div" className="text-danger" />
-                  </div>
-
-                  {/* </div> */}
 
                   <div className="form-group mt-4">
                     <Field type="email" name="email" placeholder="Email Address" className="px-3 py-2 w-100" />
@@ -127,23 +135,16 @@ const SignUp = ({ btnName, ...rest }) => {
 
                   <button type="submit" disabled={isSubmitting} className='w-100 py-2 text-white auth-btn'>Sign in</button>
 
-                  <p className="my-3">
+                  <p className="mt-3 text-end">
                     Already have an account?{' '}
-                    <Link
-                      to="/login" className="text-decoration-none my-2" style={{ color: 'red' }}
-                    >
-                      Sign in Now
+                    <Link to="/login" className="text-decoration-none mt-2 textRed">
+                      Sign in
                     </Link>
                   </p>
                 </div>
               </Form>
             )}
           </Formik>
-        </div>
-
-        {/* Logo */}
-        <div className="left">
-          <img src={logo} alt="" className="img-fluid" width="200" />
         </div>
       </div>
     </div>

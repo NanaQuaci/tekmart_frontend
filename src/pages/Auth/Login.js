@@ -2,7 +2,8 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/png/Aser.png';
+import redLogo from '../../assets/imgs/logo-red.svg';
+import whiteLogo from '../../assets/imgs/logo-white.svg';
 import axios from '../../api/axios';
 import server from '../../server';
 
@@ -57,22 +58,22 @@ const Login = () => {
         
         {/* Logo */}
         <div className="left">
-          <img src={logo} alt="" className="img-fluid" width="200" />
+          <img src={whiteLogo} alt="" className="img-fluid" width="200" />
         </div>
 
         {/*  */}
-        <div className="right">
+        <div className="right my-5 my-md-0">
           <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
             {({ isSubmitting }) => (
               <Form>
-                <div className="bg-white p-4 p-md-5">
-                  <div className='bg-danger d-flex justify-content-center mb-3'>
-                    <div>
-                      <img src={logo} alt="" className="img-fluid" width="200" />
-                    </div>
+                  <div className='d-flex justify-content-center mb-3 mb-md-0  red-logo'>
+                      <img src={redLogo} alt="" className="img-fluid" width="200" />
                   </div>
-                  <h5>LOG INTO YOUR ACCOUNT</h5>
-                  <h6>Welcome back</h6>
+                <div className="bg-white p-4 p-md-5 shadow">
+                <div className='d-flex flex-column text-center'>
+                    <div className='text-bold'>LOG INTO YOUR ACCOUNT</div>
+                    <div className='text-muted'>Welcome back</div>
+                  </div>
 
                   <div className="form-group mt-4">
                     <Field type="email" name="email" placeholder="Email Address" className="px-3 py-2 w-100" />
@@ -86,17 +87,19 @@ const Login = () => {
 
                   <div className="d-flex justify-content-between">
                     <div></div>
-                    <Link to="" className="text-decoration-none text-secondary my-2">
+                    <Link to="/forgot-password" className="text-decoration-none text-secondary my-2">
                       Forgot Password
                     </Link>
                   </div>
 
-                  <button type="submit" disabled={isSubmitting} className='w-100 py-2 text-white auth-btn'>Sign in</button>
+                  <button type="submit" disabled={isSubmitting} className='w-100 py-2 auth-btn'>
+                    Sign in
+                  </button>
 
-                  <div className="my-3">
+                  <div className="mt-3 text-end">
                     Don't have an account? {' '}
-                    <Link to="/signup" className="text-decoration-none my-2" style={{ color: 'red' }}>
-                      Sign up Now
+                    <Link to="/signup" className="text-decoration-none mt-2 textRed">
+                      Sign up
                     </Link>
                   </div>
                 </div>

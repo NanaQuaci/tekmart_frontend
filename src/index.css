@@ -10,25 +10,29 @@
 }
 
 :root {
-    --main-color: #c10013;
-  }
+  --main-color: #c10013;
+}
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f4f4f4;
-    padding: 0;
-    margin: 0;
-    font-family: "Kumbh Sans", sans-serif;
+  background-color: #f4f4f4;
+  padding: 0;
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 #root {
   font-family: "Kumbh Sans", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
+/* background colors */
+.bgRed {
+  background-color: var(--main-color);
+}
 
 .bgPrimary {
   background-color: #0f172a;
@@ -41,7 +45,16 @@ body {
   background-color: #020617;
 }
 
+/* text colors */
+.textRed {
+  color: var(--main-color);
+}
 
+.textRed:hover {
+  font-weight: 600;
+}
+
+/* jumbotron */
 .jumbo {
   min-height: 70vh;
 }

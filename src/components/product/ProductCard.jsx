@@ -5,13 +5,12 @@ import prod from '../../assets/imgs/prod.jpg'
 const ProductCard = () => {
     return (
         <>
-            <Link className="navbar-item text-decoration-none" to="/product-page">
-
-                <div className="card m-1 border-0 rounded-0 item_card_container p-3">
+            <div className="col-2 border border-danger p-3">
+                <Link className="text-decoration-none" to="/product-page">
                     <div>
-                        <img src={ prod} width={300} />
+                        <img src={prod} className='w-100' alt='' />
                     </div>
-                    <div className="text-decoration-none text-black">
+                    <div className="text-black">
                         <span className="space">Gas Smoker For Big Mansions.</span><br />
                         <span>Brand - Sahil</span>
                         <p className="price">GHC 200.00</p>
@@ -21,8 +20,9 @@ const ProductCard = () => {
                             <span className="addtocart">Add to Cart</span>
                         </div>
                     </div>
-                </div>
-            </Link></>
+                </Link>
+            </div>
+        </>
     );
 }
 

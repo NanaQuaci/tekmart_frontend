@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const SecondHeader = () => {
   return (
-    <div className="bg-danger">
+    <div className="bgRed">
       <div className='container-sm'>
         <div className=" col d-flex flex-column flex-md-row justify-content-md-between align-items-md-center py-3">
           <div className="logo col-12 col-md-3">

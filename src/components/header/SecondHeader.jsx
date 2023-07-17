@@ -17,8 +17,10 @@ const SecondHeader = () => {
 
           <div className=" col-12 col-md-7">
             <div className="mx-auto input-group d-flex">
-              <input type="text" className="search-input px-3 py-2  border-0" style={{width: '90%'}} placeholder="Search products, categories and brands.." aria-label="Recipient's username" aria-describedby="button-addon2" />
-              <button class="btn bgGrey border border-white rounded-0" type="button" id="button-addon2">
+              <input type="text" className="search-input px-3 py-2  border-0" style={{ width: '85%' }}
+                placeholder="Search products, categories and brands.." aria-label="Recipient's username" aria-describedby="button-addon2" />
+              
+              <button class="btn bgGrey border border-white rounded-0" style={{ width: '15%' }} type="button" id="button-addon2">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" fill='#fff' viewBox="0 0 512 512">
                   <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
                 </svg>

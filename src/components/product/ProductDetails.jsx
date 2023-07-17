@@ -93,20 +93,17 @@ const ProductDetails = () => {
                                     </div>
                                 </div>
 
-
-                                <Link to={'/'} className='me-3'>
-                                    <button type="button" className="px-3 py-2 btnPrimary">
+                                <div>
+                                    <button type="button" className="px-3 py-2 me-md-3 btnPrimary">
                                         Buy now
                                     </button>
-                                </Link>
 
-                                <Link to={'/'} className=''>
                                     <button type="button" className="px-3 py-2 btnSecondary">
                                         Add to cart
                                     </button>
-                                </Link>
+                                </div>
+                                
                             </div>
-
                         </div>
                     </div>
                 </div>

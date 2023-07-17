@@ -7,6 +7,10 @@
   color: #fff;
 }
 
+.subInput:focus {
+  outline: none;
+}
+
 .subscribe:hover {
   background-color: #1b294b;
 }

@@ -12,7 +12,9 @@ const Home = () => {
 
       <Jumbotron />
 
-      <ProductCard />
+      <div className='container-sm'>
+        <ProductCard />
+      </div>
 
       {/*FOOTER*/}
       <div>

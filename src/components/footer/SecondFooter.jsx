@@ -68,12 +68,12 @@ const SecondFooter = () => {
               <div>
                 Subscribe to our newsletter for the latest update
               </div>
-              <div className='d-flex flex-row mt-2'>
-                <div className='me-1'>
-                  <input type='text' placeholder='Email address' className='p-2' />
+              <div className='d-flex flex-column flex-md-row mt-2'>
+                <div className='me-md-1 mb-2 mb-md-0'>
+                  <input type='text' placeholder='Email address' className='p-2 subInput w-100' />
                 </div>
                 <div>
-                  <button className='py-2 px-3 subscribe'>Subscribe</button>
+                  <button className='py-2 px-3  w-100 subscribe'>Subscribe</button>
                 </div>
               </div>
             </div>

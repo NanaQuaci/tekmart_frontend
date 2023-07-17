@@ -39,24 +39,6 @@ const ThirdHeader = () => {
                                                 </li>
 
                                                 <li className="nav-item dropdown">
-                                                        <Link className="nav-link dropdown-toggle" to="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Tablets</Link>
-                                                        <ul className="dropdown-menu" aria-labelledby="dropdown04">
-                                                                <li><Link className="dropdown-item" to="#">Action</Link></li>
-                                                                <li><Link className="dropdown-item" to="#">Another action</Link></li>
-                                                                <li><Link className="dropdown-item" to="#">Something else here</Link></li>
-                                                        </ul>
-                                                </li>
-
-                                                <li className="nav-item dropdown">
-                                                        <Link className="nav-link dropdown-toggle" to="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Health</Link>
-                                                        <ul className="dropdown-menu" aria-labelledby="dropdown04">
-                                                                <li><Link className="dropdown-item" to="#">Action</Link></li>
-                                                                <li><Link className="dropdown-item" to="#">Another action</Link></li>
-                                                                <li><Link className="dropdown-item" to="#">Something else here</Link></li>
-                                                        </ul>
-                                                </li>
-
-                                                <li className="nav-item dropdown">
                                                         <Link className="nav-link dropdown-toggle" to="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Electronics</Link>
                                                         <ul className="dropdown-menu" aria-labelledby="dropdown04">
                                                                 <li><Link className="dropdown-item" to="#">Action</Link></li>

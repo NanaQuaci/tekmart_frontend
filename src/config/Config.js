@@ -12,11 +12,13 @@ import VendorResetPassword from '../pages/auth/VendorResetPassword';
 import SellerPage from '../pages/SellerPage';
 import ProductPage from '../pages/ProductPage';
 import Cart from '../pages/Cart';
+import Userdashboard from '../pages/Userdashboard';
 
 const Config = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/userdashboard" element ={<Userdashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/vendor-signup" element={<VendorSignup />} />

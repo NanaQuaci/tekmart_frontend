@@ -11,7 +11,10 @@ const Userdashboard = () => {
         <Container className="card  col-3">
           <div>
             <div className="flex p-2">
-              <Link  to={'/profilemanager'} className="text-decoration-none text-body-secondary d-flex gap-3">
+              <Link
+                to={'/profilemanager'}
+                className="text-decoration-none text-body-secondary d-flex gap-3"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -73,14 +76,9 @@ const Userdashboard = () => {
 
             <div className="flex p-2">
               <Link className="text-decoration-none text-body-secondary border-bottom pb-2 d-flex gap-3">
-              <svg
-                viewBox="0 0 24 24"
-                fill="#ff0000"
-                height="30"
-                width="30"
-                >
-              <path d="M12 8v5h5v-2h-3V8z" />
-                <path d="M21.292 8.497a8.957 8.957 0 00-1.928-2.862 9.004 9.004 0 00-4.55-2.452 9.09 9.09 0 00-3.626 0 8.965 8.965 0 00-4.552 2.453 9.048 9.048 0 00-1.928 2.86A8.963 8.963 0 004 12l.001.025H2L5 16l3-3.975H6.001L6 12a6.957 6.957 0 011.195-3.913 7.066 7.066 0 011.891-1.892 7.034 7.034 0 012.503-1.054 7.003 7.003 0 018.269 5.445 7.117 7.117 0 010 2.824 6.936 6.936 0 01-1.054 2.503c-.25.371-.537.72-.854 1.036a7.058 7.058 0 01-2.225 1.501 6.98 6.98 0 01-1.313.408 7.117 7.117 0 01-2.823 0 6.957 6.957 0 01-2.501-1.053 7.066 7.066 0 01-1.037-.855l-1.414 1.414A8.985 8.985 0 0013 21a9.05 9.05 0 003.503-.707 9.009 9.009 0 003.959-3.26A8.968 8.968 0 0022 12a8.928 8.928 0 00-.708-3.503z" />
+                <svg viewBox="0 0 24 24" fill="#ff0000" height="30" width="30">
+                  <path d="M12 8v5h5v-2h-3V8z" />
+                  <path d="M21.292 8.497a8.957 8.957 0 00-1.928-2.862 9.004 9.004 0 00-4.55-2.452 9.09 9.09 0 00-3.626 0 8.965 8.965 0 00-4.552 2.453 9.048 9.048 0 00-1.928 2.86A8.963 8.963 0 004 12l.001.025H2L5 16l3-3.975H6.001L6 12a6.957 6.957 0 011.195-3.913 7.066 7.066 0 011.891-1.892 7.034 7.034 0 012.503-1.054 7.003 7.003 0 018.269 5.445 7.117 7.117 0 010 2.824 6.936 6.936 0 01-1.054 2.503c-.25.371-.537.72-.854 1.036a7.058 7.058 0 01-2.225 1.501 6.98 6.98 0 01-1.313.408 7.117 7.117 0 01-2.823 0 6.957 6.957 0 01-2.501-1.053 7.066 7.066 0 01-1.037-.855l-1.414 1.414A8.985 8.985 0 0013 21a9.05 9.05 0 003.503-.707 9.009 9.009 0 003.959-3.26A8.968 8.968 0 0022 12a8.928 8.928 0 00-.708-3.503z" />
                 </svg>
                 Recently Viewed
               </Link>
@@ -112,35 +110,33 @@ const Userdashboard = () => {
 
             <div className="d-flex p-2">
               <Link className="text-decoration-none text-body-secondary d-flex gap-3 mx-auto">
-              <Button variant="secondary">LOGOUT</Button>{' '}
+                <Button variant="secondary">LOGOUT</Button>{' '}
               </Link>
             </div>
           </div>
         </Container>
-        <Container className='card p-0 vh-74'>
+        <Container className="card p-0 vh-74">
           <div className="row-8">
+            <div className="">
               <div className="">
-                <div className="">
-                    <h5 className="border-bottom p-3">Account Overview</h5>
-                </div>
+                <h5 className="border-bottom p-3">Account Overview</h5>
               </div>
+            </div>
 
             <div className="row m-3 d-flex">
               <div className="col-4 flex-grow-1">
                 <div className="card">
                   <div className="">
                     <h5 className="p-2">ACCOUNT DETAILS</h5>
-                    <hr/>
+                    <hr />
                   </div>
-                  <div className="p-2 " style={{minHeight: "150px"}}>
+                  <div className="p-2 " style={{ minHeight: '150px' }}>
                     <p class="">Collins Adu</p>
                     <p class="">aducollins49@gmail.com</p>
                   </div>
                 </div>
-                <div className='card'>
-                  <div>
-
-                  </div>
+                <div className="card">
+                  <div></div>
                 </div>
               </div>
 
@@ -148,55 +144,61 @@ const Userdashboard = () => {
                 <div className="card">
                   <div className="">
                     <h5 className="p-2">ADDRESS BOOK</h5>
-                    <hr/>
+                    <hr />
                   </div>
-                  <div className="p-2 " style={{minHeight: "150px"}}>
+                  <div className="p-2 " style={{ minHeight: '150px' }}>
                     <p class="">Your default Address:</p>
                     <p class=""></p>
                   </div>
                 </div>
-                <div className='card'>
-                  <div>
-
-                  </div>
+                <div className="card">
+                  <div></div>
                 </div>
               </div>
             </div>
 
             <div className="row m-3 d-flex">
               <div className="col-4 flex-grow-1">
-              <div className="card">
+                <div className="card">
                   <div className="">
                     <h5 className="p-2">TEKMART CREDIT</h5>
-                    <hr/>
+                    <hr />
                   </div>
-                  <div className="p-2 " style={{minHeight: "100px"}}>
-                    <div className='d-flex gap-3'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
-                    <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
-                    </svg>
-                    <span class="">GHS</span>
+                  <div className="p-2 " style={{ minHeight: '100px' }}>
+                    <div className="d-flex gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-wallet2"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
+                      </svg>
+                      <span class="">GHS</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="col-4 flex-grow-1">
-              <div className="card">
+                <div className="card">
                   <div className="">
                     <h5 className="p-2">NEWSLETTER PREFERENCES</h5>
-                    <hr/>
+                    <hr />
                   </div>
-                  <div className="p-2 " style={{minHeight: "100px"}}>
-                    <div className='d-flex gap-3'>
-                    <p>You are currently not subscribed to any of our newsletters</p>
+                  <div className="p-2 " style={{ minHeight: '100px' }}>
+                    <div className="d-flex gap-3">
+                      <p>
+                        You are currently not subscribed to any of our
+                        newsletters
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div>
-
-            </div>
+            <div></div>
           </div>
         </Container>
       </div>

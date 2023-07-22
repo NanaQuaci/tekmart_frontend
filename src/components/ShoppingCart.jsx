@@ -5,9 +5,13 @@ import MakePaymentButton from './MakePaymentButton';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import Header from './header/Header';
 
 const ShoppingCart = () => {
   return (
+    <div>
+    <Header />
+  
     <Container className="cart-dimension">
     <div className="wrapper">
       <div className="row">
@@ -258,6 +262,7 @@ const ShoppingCart = () => {
       </div>
     </div>
     </Container>
+    </div>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../components/header/Header';
-import { AiOutlineMail } from 'react-icons/fa';
 import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom/dist';
 
@@ -12,7 +11,7 @@ const Userdashboard = () => {
         <Container className="card  col-3">
           <div>
             <div className="flex p-2">
-              <Link  to={'profilemanager'} className="text-decoration-none text-body-secondary d-flex gap-3">
+              <Link  to={'/profilemanager'} className="text-decoration-none text-body-secondary d-flex gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"

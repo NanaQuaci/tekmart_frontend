@@ -69,7 +69,7 @@ const BusinessAccLogin = () => {
 
                 <div className="bg-white p-4 p-md-5 shadow">
                   <div className='d-flex flex-column text-center'>
-                    <div className='text-bold'>LOG INTO YOUR ACCOUNT</div>
+                    <div className='text-bold'>LOG INTO YOUR BUSINESS ACCOUNT</div>
                     <div className='text-muted'>Welcome back</div>
                   </div>
 
@@ -100,6 +100,13 @@ const BusinessAccLogin = () => {
                       Sign up
                     </Link>
                   </div>
+
+                  <p className="mt-3 text-end">
+                    Want to become a seller?{' '}
+                    <Link to="/vendor-login" className="text-decoration-none mt-2 textRed" >
+                      Sign up here
+                    </Link>
+                  </p>
                 </div>
               </Form>
             )}

@@ -85,7 +85,7 @@ const BusinessAccSignup = () => {
 
                 <div className="bg-white p-4 p-md-5 shadow">
                   <div className='d-flex flex-column text-center'>
-                    <div className='text-bold'>CREATE AN ACCOUNT</div>
+                    <div className='text-bold'>CREATE A BUSINESS ACCOUNT</div>
                     <div className='text-muted'>Join now to enjoy exclusiveness</div>
                   </div>
 
@@ -118,13 +118,20 @@ const BusinessAccSignup = () => {
                   </div>
 
                   <button type="submit" disabled={isSubmitting} className='w-100 py-2 text-white auth-btn'>
-                    Sign in
+                    Sign up
                   </button>
 
                   <p className="mt-3 text-end">
-                    Already have an account?{' '}
+                    Already have a business account?{' '}
                     <Link to="/vendor-login" className="text-decoration-none mt-2 textRed" >
                       Sign in
+                    </Link>
+                  </p>
+
+                  <p className="mt-3 text-end">
+                    Not a seller?{' '}
+                    <Link to="/login" className="text-decoration-none mt-2 textRed" >
+                      Sign in here
                     </Link>
                   </p>
                 </div>

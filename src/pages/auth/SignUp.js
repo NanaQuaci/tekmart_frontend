@@ -23,36 +23,8 @@ const SignUp = ({ btnName, ...rest }) => {
   };
 
   const handleSubmit = async (values, { setSubmitting }) => {
-    /*e.preventDefault();
-    axios
-      .post('http://localhost:3000/signup', {
-        firstname,
-        lastname,
-        email,
-        password,
-      })
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err)); */
-    console.log(values);
-    try {
-      const response = await axios.post(`${server}user/register`, {
-        // firstname: values.firstname,
-        // lastname: values.lastname,
-        // email: values.email,
-        // password: values.password,
-        ...values,
-      });
-      console.log(response.data);
-      setSubmitting(false);
-      // Handle successful response here
-    } catch (error) {
-      console.log(error);
-      //Handle error here
-
-      setSubmitting(false);
-    } finally {
-      setSubmitting(false);
-    }
+    // const results = await signup().unwrap();
+    // console.log(results);
   };
   const validationSchema = Yup.object({
     firstname: Yup.string().required('First Name is required'),

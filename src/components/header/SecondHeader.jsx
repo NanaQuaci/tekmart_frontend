@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from '../../assets/imgs/logo-white.svg';
-import { Link } from 'react-router-dom';
+import { Link,  } from 'react-router-dom';
 import '../../styles/header.css';
+
 
 
 const SecondHeader = () => {

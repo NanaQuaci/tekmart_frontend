@@ -10,7 +10,6 @@ import Header from './header/Header';
 const ShoppingCart = () => {
   return (
     <div>
-    <Header />
   
     <Container className="cart-dimension">
     <div className="wrapper">

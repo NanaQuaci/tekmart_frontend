@@ -109,7 +109,7 @@ const Userdashboard = () => {
             </div>
 
             <div className="d-flex p-2">
-              <Link className="text-decoration-none text-body-secondary d-flex gap-3 mx-auto">
+              <Link to="/login" className="text-decoration-none text-body-secondary d-flex gap-3 mx-auto">
                 <Button variant="secondary">LOGOUT</Button>{' '}
               </Link>
             </div>

@@ -2,14 +2,11 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import prod from '../../assets/imgs/prod.jpg';
 import '../../styles/product.css';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
-
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
   //const { data, error, isLoading } = useGetAllProductsQuery();
-  const dispatch = useDispatch();
-
-
+  // const dispatch = useDispatch();
 
   return (
     <>
@@ -26,12 +23,7 @@ const ProductCard = ({product}) => {
         </Link>
 
         <div className="my-2">
-          <button
-            className="w-100 py-1 btnPrimary"
-          
-          >
-            Add to cart
-          </button>
+          <button className="w-100 py-1 btnPrimary">Add to cart</button>
         </div>
       </div>
     </>

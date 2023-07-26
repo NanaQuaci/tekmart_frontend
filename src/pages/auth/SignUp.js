@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage, useFormikContext } from 'formik';
 import * as Yup from 'yup';
 import axios from '../../api/axios';
@@ -7,6 +7,8 @@ import server from '../../server';
 import redLogo from '../../assets/imgs/logo-red.svg';
 import whiteLogo from '../../assets/imgs/logo-white.svg';
 import '../../styles/auth.css';
+import { useUserAuthMutation } from '../../app/feature/userSlice/authApiSlice';
+import { Spinner } from 'reactstrap';
 
 const SignUp = ({ btnName, ...rest }) => {
   const isSubmitting = useFormikContext();
@@ -21,10 +23,21 @@ const SignUp = ({ btnName, ...rest }) => {
     password: '',
     terms: false,
   };
+  const [signup] = useUserAuthMutation();
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (values, { setSubmitting }) => {
-    // const results = await signup().unwrap();
-    // console.log(results);
+    setIsLoading(true);
+    try {
+      const results = await signup({ ...values }).unwrap();
+      if (results) {
+        setIsLoading(false);
+        navigate('/login');
+      }
+    } catch (error) {
+      setIsLoading(false);
+    }
   };
   const validationSchema = Yup.object({
     firstname: Yup.string().required('First Name is required'),
@@ -61,6 +74,7 @@ const SignUp = ({ btnName, ...rest }) => {
 
                 <div className="bg-white p-4 p-md-5 shadow cardWidth">
                   <div className="d-flex flex-column text-center">
+                    {isLoading ? <p>Loading...</p> : ''}
                     <div className="text-bold">CREATE AN ACCOUNT</div>
                     <div className="text-muted">
                       Join now to enjoy exclusiveness
@@ -155,7 +169,13 @@ const SignUp = ({ btnName, ...rest }) => {
                     disabled={isSubmitting}
                     className="w-100 py-2 text-white auth-btn"
                   >
-                    Sign up
+                    {isLoading ? (
+                      <>
+                        <Spinner /> Loading
+                      </>
+                    ) : (
+                      'Signup'
+                    )}
                   </button>
 
                   <p className="mt-3 text-end">

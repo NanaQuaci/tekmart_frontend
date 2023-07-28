@@ -9,7 +9,24 @@ export const authApiSlice = apiSlice.injectEndpoints({
         body: { ...data },
       }),
     }),
+    loginAuth: builder.mutation({
+      query: (data) => ({
+        url: '/user/login',
+        method: 'POST',
+        body: { ...data },  //for destructuring
+      }),
+    }),
+    vendorAuth: builder.mutation({
+      query: (data) => ({
+        url: '/vendor/register',
+        method: 'POST',
+        body: { ...data },
+      }),
+    }),
+
+
   }),
 });
 
-export const { useUserAuthMutation } = authApiSlice;
+
+export const { useUserAuthMutation, useLoginAuthMutation, useVendorAuthMutation } = authApiSlice;

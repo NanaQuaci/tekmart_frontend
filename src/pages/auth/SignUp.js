@@ -7,6 +7,8 @@ import server from '../../server';
 import redLogo from '../../assets/imgs/logo-red.svg';
 import whiteLogo from '../../assets/imgs/logo-white.svg';
 import '../../styles/auth.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useUserAuthMutation } from '../../app/feature/userSlice/authApiSlice';
 import { Spinner } from 'reactstrap';
 
@@ -27,13 +29,19 @@ const SignUp = ({ btnName, ...rest }) => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
+  const notify = (message) => toast(message);
+
   const handleSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
     try {
       const results = await signup({ ...values }).unwrap();
-      if (results) {
+      if (results.success) {
         setIsLoading(false);
+        notify(results.message);
         navigate('/login');
+      } else {
+        setIsLoading(false);
+        notify(results.message)
       }
     } catch (error) {
       setIsLoading(false);
@@ -171,11 +179,12 @@ const SignUp = ({ btnName, ...rest }) => {
                   >
                     {isLoading ? (
                       <>
-                        <Spinner /> Loading
+                        <Spinner /> Signing up...
                       </>
                     ) : (
                       'Signup'
                     )}
+                    <ToastContainer />
                   </button>
 
                   <p className="mt-3 text-end">

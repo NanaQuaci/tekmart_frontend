@@ -42,25 +42,6 @@ const Login = ({ btnName, ...rest }) => {
     } catch (error) {
       setIsLoading(false);
     }
-
-    // try{
-    //   if (response.data) {
-    //     // Authentication successful
-    //     // Perform your login logic here using values.email and values.password
-    //     console.log('Login success');
-    //     // navigate('/');
-    //   } else {
-    //     // Authentication failed
-    //     const error = await response.data();
-    //     console.log('Login failed:', error);
-    //     alert('Invalid email or password');
-    //   }
-    // } catch (error) {
-    //   console.error('Login error:', error);
-    //   alert('An error occurred during login');
-    // } finally {
-    //   setSubmitting(false);
-    // }
   };
 
   const AutoSubmitToken = () => {

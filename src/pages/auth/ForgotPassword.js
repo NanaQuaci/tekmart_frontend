@@ -1,98 +1,115 @@
-import React from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import React, { useEffect, useState } from 'react';
+import { Formik, Form, Field, ErrorMessage, useFormikContext } from 'formik';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import redLogo from '../../assets/imgs/logo-red.svg';
 import whiteLogo from '../../assets/imgs/logo-white.svg';
 import axios from '../../api/axios';
 import server from '../../server';
 import '../../styles/auth.css';
+import { useForgotPasswordAuthMutation } from '../../app/feature/userSlice/authApiSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import { Spinner } from 'reactstrap';
 
-const ForgotPassword = () => {
+const ForgotPassword = ({ btnName, ...rest }) => {
+  const isSubmitting = useFormikContext();
 
-    const navigate = useNavigate();
+  const initialValues = {
+    email: '',
+  };
 
-    const initialValues = {
-        email: '',
-    };
+  const [forgotpassword] = useForgotPasswordAuthMutation();
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-    const validationSchema = Yup.object({
-        email: Yup.string().email('Invalid email address').required('Email is required'),
-    });
+  const notify = (message) => toast(message);
 
-    const handleSubmit = async (values, { setSubmitting }) => {
+  const handleSubmit = async (values, { setSubmitting }) => {
+    setIsLoading(true);
+    try {
+      const response = await forgotpassword({ ...values }).unwrap();
+      if (response.success) {
+        setIsLoading(false);
+        notify(response.message);
+        navigate('/');
+      } else {
+        setIsLoading(false);
+        notify(response.message);
+      }
+    } catch (error) {
+      setIsLoading(false);
+    }
+  };
 
-        try {
-            const response = await axios.post(`${server}user/login`, {
-                // method: 'POST',
-                // headers: {
-                //   'Content-Type': 'application/json',
-                // },
-                // body: JSON.stringify(values),
-                ...values,
-            });
-            console.log(response.data);
-            if (response.data) {
-                // Authentication successful
-                // Perform your login logic here using values.email and values.password
-                console.log('Login success');
-                // navigate('/');
-            } else {
-                // Authentication failed
-                const error = await response.data();
-                console.log('Login failed:', error);
-                alert('Invalid email or password');
-            }
-        } catch (error) {
-            console.error('Login error:', error);
-            alert('An error occurred during login');
-        } finally {
-            setSubmitting(false);
-        }
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email('Invalid email address')
+      .required('Email is required'),
+  });
 
-    };
-
-    return (
-        <div className="main-container">
-            <div className="d-flex">
-
-                {/*  */}
-                <div className="right">
-                    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-                        {({ isSubmitting }) => (
-                            <Form>
-                                <div className='d-flex justify-content-center mb-3 mb-md-0  red-logo'>
-                                    <img src={redLogo} alt="" className="img-fluid" width="200" />
-                                </div>
-                                <div className="bg-white p-4 p-md-5 shadow cardReset">
-                                    <div className='d-flex flex-column text-center'>
-                                        <div className='text-bold'>RESET PASSWORD</div>
-                                        <div className='text-muted'>Enter your email to continue</div>
-                                    </div>
-
-                                    <div className="form-group my-4">
-                                        <Field type="email" name="email" placeholder="Email Address" className="px-3 py-2 w-100" />
-                                        <ErrorMessage name="email" component="div" className="text-danger" />
-                                    </div>
-
-                                    <button type="submit" disabled={isSubmitting} className='w-100 py-2 auth-btn'>
-                                        Send Email
-                                    </button>
-
-                                </div>
-                            </Form>
-                        )}
-                    </Formik>
+  return (
+    <div className="main-container">
+      <div className="d-flex">
+        {/*  */}
+        <div className="right">
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
+          >
+            {({ isSubmitting }) => (
+              <Form>
+                <div className="d-flex justify-content-center mb-3 mb-md-0  red-logo">
+                  <img src={redLogo} alt="" className="img-fluid" width="200" />
                 </div>
+                <div className="bg-white p-4 p-md-5 shadow cardReset">
+                  <div className="d-flex flex-column text-center">
+                    <div className="text-bold">RESET PASSWORD</div>
+                    <div className="text-muted">
+                      Enter your email to continue
+                    </div>
+                  </div>
 
-                {/* Logo */}
-                <div className="left">
-                    <img src={whiteLogo} alt="" className="img-fluid" width="200" />
+                  <div className="form-group my-4">
+                    <Field
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      className="px-3 py-2 w-100"
+                    />
+                    <ErrorMessage
+                      name="email"
+                      component="div"
+                      className="text-danger"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-100 py-2 auth-btn"
+                  >
+                    {isLoading ? (
+                      <>
+                        <Spinner /> Sending Email
+                      </>
+                    ) : (
+                      'Send Email'
+                    )}
+                  </button>
                 </div>
-
-            </div>
+              </Form>
+            )}
+          </Formik>
         </div>
-    )
-}
 
-export default ForgotPassword
+        {/* Logo */}
+        <div className="left">
+          <img src={whiteLogo} alt="" className="img-fluid" width="200" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ForgotPassword;

@@ -41,7 +41,7 @@ const SignUp = ({ btnName, ...rest }) => {
         navigate('/login');
       } else {
         setIsLoading(false);
-        notify(results.message)
+        notify(results.message);
       }
     } catch (error) {
       setIsLoading(false);

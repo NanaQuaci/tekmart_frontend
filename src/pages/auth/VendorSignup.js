@@ -7,6 +7,8 @@ import * as Yup from 'yup';
 import axios from '../../api/axios';
 import server from '../../server';
 import '../../styles/auth.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Spinner } from 'reactstrap';
 import { useVendorAuthMutation } from '../../app/feature/userSlice/authApiSlice';
 
@@ -17,8 +19,7 @@ const BusinessAccSignup = ({ btnName, ...rest }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState(); */
   const initialValues = {
-    firstname: '',
-    lastname: '',
+    shopname: '',
     email: '',
     password: '',
     terms: false,
@@ -28,14 +29,20 @@ const BusinessAccSignup = ({ btnName, ...rest }) => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
+  const notify = (message) => toast(message);
+
   const handleSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
-    console.log(values);
+    //console.log(values);
     try {
       const response = await vendorsignup({ ...values }).unwrap();
-      if (response) {
+      if (response.success) {
         setIsLoading(false);
+        notify(response.message);
         navigate('/vendor-login');
+      } else {
+        setIsLoading(false);
+        notify(response.message);
       }
     } catch (error) {
       setIsLoading(false);
@@ -147,11 +154,12 @@ const BusinessAccSignup = ({ btnName, ...rest }) => {
                   >
                     {isLoading ? (
                       <>
-                        <Spinner /> Loading...
+                        <Spinner /> Creating Business Account...
                       </>
                     ) : (
                       'Signup'
                     )}
+                    <ToastContainer />
                   </button>
 
                   <p className="mt-3 text-end">

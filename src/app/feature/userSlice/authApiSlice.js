@@ -24,9 +24,30 @@ export const authApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
+    vendorLoginAuth: builder.mutation({
+      query: (data) => ({
+        url: '/vendor/login',
+        method: 'POST',
+        body: { ...data },
+      }),
+    }),
+
+    forgotPasswordAuth: builder.mutation({
+      query: (data) => ({
+        url: 'vendor/forgot-password-token',
+        method: 'POST',
+        body: { ...data },
+      }),
+    }),
+
+    resetPasswordAuth: builder.mutation({
+      query: (data) => ({
+        url: ''
+      })
+    })
 
   }),
 });
 
 
-export const { useUserAuthMutation, useLoginAuthMutation, useVendorAuthMutation } = authApiSlice;
+export const { useUserAuthMutation, useLoginAuthMutation, useVendorAuthMutation, useVendorLoginAuthMutation, useForgotPasswordAuthMutation } = authApiSlice;

@@ -42,12 +42,14 @@ export const authApiSlice = apiSlice.injectEndpoints({
 
     resetPasswordAuth: builder.mutation({
       query: (data) => ({
-        url: ''
-      })
-    })
+        url: 'vendor/reset-password/:token',
+        method: 'PUT',
+        body: { ...data },
+      }),
+    }),
 
   }),
 });
 
 
-export const { useUserAuthMutation, useLoginAuthMutation, useVendorAuthMutation, useVendorLoginAuthMutation, useForgotPasswordAuthMutation } = authApiSlice;
+export const { useUserAuthMutation, useLoginAuthMutation, useVendorAuthMutation, useVendorLoginAuthMutation, useForgotPasswordAuthMutation, useResetPasswordAuthMutation } = authApiSlice;

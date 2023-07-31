@@ -10,6 +10,8 @@ import '../../styles/auth.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { useLoginAuthMutation } from '../../app/feature/userSlice/authApiSlice';
 import { Spinner } from 'reactstrap';
+import { useDispatch } from 'react-redux';
+import { setCredentials } from '../../app/feature/userSlice/authSlice';
 
 const Login = ({ btnName, ...rest }) => {
   const isSubmitting = useFormikContext();
@@ -23,6 +25,7 @@ const Login = ({ btnName, ...rest }) => {
   const navigate = useNavigate();
 
   const notify = (message) => toast(message);
+  const dispatch = useDispatch();
 
   const handleSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
@@ -30,14 +33,14 @@ const Login = ({ btnName, ...rest }) => {
     try {
       const response = await login({ ...values }).unwrap();
       if (response.success) {
+        dispatch(setCredentials({ ...response }));
         setIsLoading(false);
         notify(response.message);
-        console.log(response)
+        console.log(response);
         navigate('/');
-      }
-      else {
+      } else {
         setIsLoading(false);
-        notify(response.message)
+        notify(response.message);
       }
     } catch (error) {
       setIsLoading(false);

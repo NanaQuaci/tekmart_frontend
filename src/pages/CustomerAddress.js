@@ -1,19 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/header/Header';
 import { Button, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom/dist';
-import { useSelector } from 'react-redux';
-import { userinfo } from '../app/feature/userSlice/authSlice';
+import { Link } from 'react-router-dom';
+const CustomerAddress = () => {
+  const [formData, setFormData] = useState({
+    FirstName: '',
+    LastName: '',
+    PhoneNumber: '',
+    OtherPhone: '',
+  });
 
-const Userdashboard = () => {
-  const userInfo = useSelector(userinfo);
-  const { firstname, lastname, email } = userInfo;
+  function handleFirstNameChange(e) {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
 
+  function handleLastNameChange(e) {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
+  function handlePhoneNumberChange(e) {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
+  function handleOtherPhoneChange(e) {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
   return (
     <div>
       <Header />
       <div className="d-flex flex-row gap-2">
-        <Container className="card  col-3">
+        <Container className="card col-3">
           <div>
             <div className="flex p-2">
               <Link
@@ -126,95 +158,88 @@ const Userdashboard = () => {
         <Container className="card p-0 vh-74">
           <div className="row-8">
             <div className="">
-              <div className="">
-                <h5 className="border-bottom p-3">Account Overview</h5>
+              <div className="d-flex border-bottom p-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                  />
+                </svg>
+                <h5>Edit Address</h5>
               </div>
             </div>
 
-            <div className="row m-3 d-flex">
-              <div className="col-4 flex-grow-1">
-                <div className="card">
-                  <div className="">
-                    <h5 className="p-2">ACCOUNT DETAILS</h5>
-                    <hr />
-                  </div>
-                  <div className="p-2 " style={{ minHeight: '150px' }}>
-                    <p class="">
-                      {firstname} {lastname}
-                    </p>
-                    <p class="">{email}</p>
-                  </div>
+            <div className="">
+              <div className="d-flex justify-content-between p-3">
+                <p></p>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    onChange={handleFirstNameChange}
+                    id="floatingInput"
+                    placeholder="Enter your first name"
+                  />
+                  <label for="floatingInput">First Name</label>
                 </div>
-                <div className="card">
-                  <div></div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    onChange={handleLastNameChange}
+                    id="floatingInput"
+                    placeholder="Enter your last Name"
+                  />
+                  <label for="floatingInput">Last Name</label>
                 </div>
               </div>
-
-              <div className="col-4 flex-grow-1">
-                <div className="card">
-                  <div className="">
-                    <h5 className="p-2">ADDRESS BOOK</h5>
-                    <hr />
-                  </div>
-                  <div className="p-2 " style={{ minHeight: '150px' }}>
-                    <p class="">Your default Address:</p>
-                    <p class="">
-                      
-                    </p>
-                  </div>
+            </div>
+            <div className="">
+              <div className="d-flex justify-content-between p-3">
+                <p></p>
+                <div class="form-floating mb-3">
+                  <input className="w-200"
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    onChange={handlePhoneNumberChange}
+                    placeholder="Phone Number"
+                  />
+                  <label for="floatingInput">Phone Number</label>
                 </div>
-                <div className="card">
-                  <div></div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    onChange={handleOtherPhoneChange}
+                    id="floatingInput"
+                    placeholder="Enter your other phone number"
+                  />
+                  <label for="floatingInput">Additional Phone Number</label>
                 </div>
               </div>
             </div>
 
-            <div className="row m-3 d-flex">
-              <div className="col-4 flex-grow-1">
-                <div className="card">
-                  <div className="">
-                    <h5 className="p-2">TEKMART CREDIT</h5>
-                    <hr />
-                  </div>
-                  <div className="p-2 " style={{ minHeight: '100px' }}>
-                    <div className="d-flex gap-3">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-wallet2"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
-                      </svg>
-                      <span class="">GHS</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4 flex-grow-1">
-                <div className="card">
-                  <div className="">
-                    <h5 className="p-2">NEWSLETTER PREFERENCES</h5>
-                    <hr />
-                  </div>
-                  <div className="p-2 " style={{ minHeight: '100px' }}>
-                    <div className="d-flex gap-3">
-                      <p>
-                        You are currently not subscribed to any of our
-                        newsletters
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Add an Address"
+              />
+              <label for="floatingInput">Address</label>
             </div>
-            <div></div>
-          </div>
-          <div className="d-flex justify-content-between align-items-center m-4">
-            <div></div>
-            <button className="btn btn-secondary">Update</button>
+            </div>
           </div>
         </Container>
       </div>
@@ -222,4 +247,4 @@ const Userdashboard = () => {
   );
 };
 
-export default Userdashboard;
+export default CustomerAddress;

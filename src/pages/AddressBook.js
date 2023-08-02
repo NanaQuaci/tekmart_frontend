@@ -2,63 +2,11 @@ import React, { useState } from 'react';
 import Header from '../components/header/Header';
 import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import '../styles/style.css';
-const CustomerAddress = () => {
-  const [formData, setFormData] = useState({
-    FirstName: '',
-    LastName: '',
-    PhoneNumber: '',
-    OtherPhone: '',
-  });
-
-  function handleFirstNameChange(e) {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  }
-
-  function handleLastNameChange(e) {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  }
-
-  function handlePhoneNumberChange(e) {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  }
-
-  function handleOtherPhoneChange(e) {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  }
-
-  function handleAddressChange(e) {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    })
-  }
-
-  function handleAdditionalInfoChange(e) {
-    const {name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    })
-  }
-
+import { useSelector } from 'react-redux';
+import { userinfo } from '../app/feature/userSlice/authSlice';
+const AddressBook = () => {
+    const userInfo = useSelector(userinfo);
+    const { firstname, lastname, address, additionalinfo } = userinfo;
   return (
     <div>
       <Header />
@@ -177,94 +125,32 @@ const CustomerAddress = () => {
           <div className="row-8">
             <div className="">
               <div className="d-flex border-bottom p-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-arrow-left"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-                  />
-                </svg>
-                <h5>Edit Address</h5>
+                <h5>Address Book</h5>
+                <div></div>
+                <div>
+                  <Link to="/customeraddress">
+                    <Button type="button" className="btn btn-danger">
+                      {' '}
+                      ADD NEW ADDRESS
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <div className="d-flex justify-content-between align-items-center p-3">
-              <div className="first-name form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  onChange={handleFirstNameChange}
-                  id="floatingInput"
-                  placeholder="Enter your first name"
-                />
-                <label for="floatingInput">First Name</label>
-              </div>
-              <div class="last-name form-floating mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  onChange={handleLastNameChange}
-                  id="floatingInput"
-                  placeholder="Enter your last Name"
-                />
-                <label for="floatingInput">Last Name</label>
-              </div>
-            </div>
+            <div className="card col-5">
+              <div className="">
+              <div className="p-2 " style={{ minHeight: '150px' }}>
+                    <p class="">
+                      {firstname || ""} {lastname || ""}
+                    </p>
+                    <p class="">{address || ""}</p>
+                    <p></p>
 
-            <div className="d-flex justify-content-between p-3">
-              <div class="phone-number form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="floatingInput"
-                  onChange={handlePhoneNumberChange}
-                  placeholder="Phone Number"
-                />
-                <label for="floatingInput">Phone Number</label>
-              </div>
-              <div class="additional-phone form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  name=""
-                  onChange={handleOtherPhoneChange}
-                  id="floatingInput"
-                  placeholder="Enter your other phone number"
-                />
-                <label for="floatingInput">Additional Phone Number</label>
-              </div>
-            </div>
-
-            <div className="">
-              <div class="form-floating mb-3 px-4">
-                <input
-                  type="text"
-                  class="form-control"
-                  onChange={handleAddressChange}
-                  id="floatingInput"
-                  placeholder="Add an Address"
-                />
-                <label for="floatingInput">Address</label>
-              </div>
-            </div>
-
-            <div className="">
-              <div class="form-floating mb-3 px-4">
-                <input
-                  type="text"
-                  class="form-control"
-                  onChange={handleAdditionalInfoChange}
-                  id="floatingInput"
-                  placeholder="Add a residential address"
-                />
-                <label for="floatingInput">Additional Information</label>
+                    <p style={{color: 'green'}}>Default Address</p>
+                  </div>
+                  <hr />
+                  <h5 style={{color: 'grey'}}> SET AS DEFAULT</h5>
               </div>
             </div>
           </div>
@@ -274,4 +160,4 @@ const CustomerAddress = () => {
   );
 };
 
-export default CustomerAddress;
+export default AddressBook;

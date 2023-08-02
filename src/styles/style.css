@@ -7,7 +7,9 @@
   list-style-type: disc;
 }
 
-
+.first-name .last-name .phone-number .additional-phone{
+  width: 200px;
+}
 .cart {
   background-color: white;
 }

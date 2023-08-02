@@ -17,6 +17,7 @@ import Cart from '../pages/Cart';
 import 'react-toastify/dist/ReactToastify.css';
 import Userdashboard from '../pages/Userdashboard';
 import CustomerAddress from '../pages/CustomerAddress';
+import AddressBook from '../pages/AddressBook';
 
 const Config = () => {
   return (
@@ -32,6 +33,7 @@ const Config = () => {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/vendor-forgot-password" element={<VendorForgotPassword />} />
         <Route path="/customeraddress" element ={<CustomerAddress />} />
+        <Route path="/addressbook" element={<AddressBook />} />
    
         <Route path="/vendor-reset-password" element={<VendorResetPassword />} />
         <Route path="/" element={<Home />} />

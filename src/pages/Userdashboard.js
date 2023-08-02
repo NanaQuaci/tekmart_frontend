@@ -140,9 +140,9 @@ const Userdashboard = () => {
                   </div>
                   <div className="p-2 " style={{ minHeight: '150px' }}>
                     <p class="">
-                      {firstname} {lastname}
+                      {firstname || ""} {lastname || ""}
                     </p>
-                    <p class="">{email}</p>
+                    <p class="">{email || ""}</p>
                   </div>
                 </div>
                 <div className="card">

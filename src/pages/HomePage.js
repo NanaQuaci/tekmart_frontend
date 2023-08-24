@@ -13,7 +13,8 @@ const Home = () => {
 
       <Jumbotron />
 
-      <div className='container-sm'>
+      <div className='container-sm d-flex gap-3'>
+        <ProductCard />
         <ProductCard />
       </div>
 

@@ -3,3 +3,12 @@
 .search-input:focus {
   outline: none;
 }
+
+.back {
+  background: transparent;
+  
+}
+
+.back:hover{
+  background: transparent;
+}

@@ -41,6 +41,7 @@ export const authSlice = createSlice({
 
 export const { signupAuth, loginAuth, setCredentials } = authSlice.actions;
 
-export const userinfo = state => state?.auth?.userauth
+export const userinfo = (state) => state?.auth?.userauth;
+export const token = (state) => state?.auth?.userauth?.token;
 
 export default authSlice.reducer;

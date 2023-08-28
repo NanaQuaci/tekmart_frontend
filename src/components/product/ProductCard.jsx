@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
         position: toast.POSITION.TOP_RIGHT,
       });
     } catch (error) {
-      console.error(error);
+      console.error(error); 
 
       toast.error('Error adding product to cart', {
         position: toast.POSITION.TOP_RIGHT,

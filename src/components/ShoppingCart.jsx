@@ -6,12 +6,16 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Header from './header/Header';
+import {useSelector} from 'react-redux'
 
 const ShoppingCart = () => {
+
+  const cartItems = useSelector(state => state.cart.cartItems);
   return (
+    
     <div>
-  
-    <Container className="cart-dimension">
+    <Header />
+    {/* <Container className="cart-dimension">
     <div className="wrapper">
       <div className="row">
         <div className="card col-8">
@@ -260,7 +264,14 @@ const ShoppingCart = () => {
         </div>
       </div>
     </div>
-    </Container>
+    </Container> */}
+    <h2>Shopping Cart</h2>
+    {cartItems.map((item) => (
+      <div key={item.id}>
+        <span>{item.name}</span>
+        <span>Quantity: {item.cartQuantity}</span>
+      </div>
+    ))}
     </div>
   );
 };

@@ -18,6 +18,7 @@ const SecondHeader = (args) => {
 
   //   );
   // };
+  //const cartItems = useSelector(state => state.cart.cart);
   function Authhandle({ direction, ...args }) {}
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -78,7 +79,7 @@ const SecondHeader = (args) => {
                   </svg>
                 </Link>
               ) : (
-                <div className="d-flex p-5">
+                <div className="d-flex px-5">
                   <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle caret className="back border-0 bg-none">
                       {' '}
@@ -104,23 +105,23 @@ const SecondHeader = (args) => {
                       </Link>
                     </DropdownMenu>
                   </Dropdown>
-                  
                 </div>
-              ) }
-                <div className="px-3">
-                    <Link to="/cart">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="28"
-                        height="28"
-                        fill="#fff"
-                        class="bi bi-cart2"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-                      </svg>
-                    </Link>
-                  </div>
+              )}
+              <div className="px-3">
+                <Link to="/shopping-cart">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="#fff"
+                    class="bi bi-cart2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                  </svg>{' '}
+                  {/* <small>{cartItems.length}</small> */}
+                </Link>
+              </div>
             </div>
           </div>
         </div>

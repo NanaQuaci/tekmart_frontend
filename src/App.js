@@ -8,6 +8,9 @@ function App() {
     <Provider store={store}>
       <Config />;
     </Provider>
+
+    //document.getElementById('root')
+   
   );
 }
 

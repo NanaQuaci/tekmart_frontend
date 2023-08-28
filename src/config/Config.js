@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Userdashboard from '../pages/Userdashboard';
 import CustomerAddress from '../pages/CustomerAddress';
 import AddressBook from '../pages/AddressBook';
+import ShoppingCart from '../components/ShoppingCart';
 
 const Config = () => {
   return (
@@ -39,6 +40,7 @@ const Config = () => {
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<SellerPage />} />
         <Route path="/product-page" element={<ProductPage />} />
+        <Route path="/shopping-cart" element = {<ShoppingCart />} />
       </Routes>
 
     </BrowserRouter>

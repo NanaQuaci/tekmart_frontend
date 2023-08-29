@@ -58,13 +58,13 @@ const ProductCard = ({ product }) => {
   return (
     <>
       {allProducts.map((product) => (
-        <div className=" col-6 col-md-2 shadow p-3">
+        <div className=" col-6 col-md-2 shadow p-3 bg-white">
           <Link
             to={'/product-page'}
             className="text-decoration-none text-black"
           >
-            <div>
-              <img src={product.images[0] ?? prod} className="w-100" alt="" />
+            <div style={{display: "flex", justifyContent:"center"}}>
+              <img src={product.images[0] ?? prod} width={100} height={100} alt="" />
             </div>
             <div className="pt-2">
               <div className="price">GHC {product.price}</div>

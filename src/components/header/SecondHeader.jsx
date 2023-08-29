@@ -13,6 +13,7 @@ import { token } from '../../app/feature/userSlice/authSlice';
 import PropTypes from 'prop-types';
 
 const SecondHeader = (args) => {
+  const [searchQuery, setSearchQuery] = useState('');
   // const handleAuth = () => {
   //   return (
 
@@ -43,6 +44,8 @@ const SecondHeader = (args) => {
                 placeholder="Search products, categories and brands.."
                 aria-label="Recipient's username"
                 aria-describedby="button-addon2"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
 
               <button
